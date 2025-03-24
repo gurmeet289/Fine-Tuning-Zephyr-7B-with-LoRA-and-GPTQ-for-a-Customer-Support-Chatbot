@@ -125,13 +125,16 @@ Zephyr-7B (GPTQ)	Pretrained	~10GB VRAM	~0.8s per response	88.7%
     2) GPTQ reduces inference latency and memory footprint.
 
 ### LoRA Vs QLoRA
-Feature	                                                    LoRA	                QLoRA
-Requires full precision (FP16)?	                            ✅ Yes	                ❌ No (uses NF4 quantization)
-Uses 4-bit quantization?	                                ❌ No    	            ✅ Yes (uses bitsandbytes)
-Best for 24GB+ VRAM GPUs?	                                ✅ Yes	                ❌ No (better for 8GB-16GB VRAM)
-Can fine-tune 30B+ models on a single GPU?	                ❌ No	                ✅ Yes
-Faster inference?	                                        ✅ Yes	                ❌ No (quantization can slow it slightly)
-Best for budget GPUs (T4, RTX 3060)?	                    ❌ No	                ✅ Yes
-Memory savings (~70%)?	                                    ❌ No	                ✅ Yes
-Uses GPTQ for quantization?	                                ✅ Sometimes	        ❌ No (uses bitsandbytes)
+
+| Feature                                    |       LoRA       |        QLoRA      |
+|--------------------------------------------|----------------- |-------------------|
+| Requires full precision (FP16)?            | ✅ Yes           | ❌ No (uses NF4 quantization) |
+| Uses 4-bit quantization?                   | ❌ No           | ✅ Yes (uses bitsandbytes) |
+| Best for 24GB+ VRAM GPUs?                  | ✅ Yes          | ❌ No (better for 8GB-16GB VRAM) |
+| Can fine-tune 30B+ models on a single GPU? | ❌ No           | ✅ Yes |
+| Faster inference?                          | ✅ Yes          | ❌ No (quantization can slow it slightly) |
+| Best for budget GPUs (T4, RTX 3060)?       | ❌ No           | ✅ Yes |
+| Memory savings (~70%)?                     | ❌ No           | ✅ Yes |
+| Uses GPTQ for quantization?                | ✅ Sometimes    | ❌ No (uses bitsandbytes) |
+
 
